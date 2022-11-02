@@ -138,13 +138,13 @@ while(opcio!=0):
         case "3":
             opcio=menu_canvis_de_base()
 
-            opcio =input("Indica la opcio que vulguis")
+            opcio =input("Indica la opcio que vulguis: ")
             a =input("Indiqui el nuombre: ")
                 
-            match opcio2:
-                case "1": # Binari a
-                    b=int(a,base=8)
-                    c=int(a,base=10)
+            match opcio:
+                case "1":
+                    b=dectoocatal(a)
+                    c=decto(a,base=10)
                     d=int(a,base=16)
                     print("El número ",a," en octal= ",b, " en decimal= ",c," en hexadecimal= ", d)
                 case "2": # Octal a
@@ -168,45 +168,3 @@ while(opcio!=0):
                     print("Opció no vàlida!")
         case "0":
             print("Adéu")
-print("""
-Menú:
-1. Sumar
-2. Restar
-3. Multiplicar
-4. Dividir
-5. Cociente
-6. Potencia
-7. Resto
-0. Salir
-"""
-)
-opcio=input("Seleccione una opción: ")
-a = input("Indique el primer operador: ")
-b = input("Indique el segundo operador: ")
-match opcio:
-    case "1":
-        c=int(a)+int(b)
-        print("La suma de ",a," mas ",b," es ",c)
-    case "2":
-        c=int(a)-int(b)
-        print("La resta de ",a," menos ",b," es ",c)
-    case "3":
-        c=int(a)*int(b)
-        print("La multiplicación de ",a," por ",b," es ",c)
-    case "4":
-        c=int(a)/int(b)
-        print("La división entre ",a," y ",b," es ",c)
-    case "5":
-        c=int(a)//int(b)
-        print("El cociente de ",a," entre ",b," es ",c)
-    case "6":
-        c=int(a)**int(b)
-        print("",a," elevado a ",b," es ",c)
-    case "7":
-        c= int(a)%int(b)
-        print("El resto de ",a," entre ",b," es ",c)
-    case "0":
-        print("Adios")   
-    case other:
-        print("Opción no valida")
-
