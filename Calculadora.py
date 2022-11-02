@@ -54,15 +54,22 @@ def dectooctal(decimal):
     octal = " "
     while decimal > 0:
         residuo = decimal % 8
+        octal = str(residuo) + octal
+        decimal = int(decimal / 8)
     return octal
-def dectobin(decimal)
-    bin = " "
+def dectobin(decimal):
+    binario = " "
     while decimal > 0:
         residuo = decimal % 2
+        binario = str(residuo) + binario
+        binario = int(decimal / 2)
     return binario
-def dectohex(decimal)
+def dectohex(decimal):
+    hexadecimal = " "
     while decimal > 0:
         residuo = decimal % 16
+        hexadecimal = str(residuo) + hexadecimal
+        hexadecimal = int(decimal / 16)
     return hexadecimal
 
 #Final Funciones
@@ -146,9 +153,9 @@ while(opcio!=0):
                     d=int(a,base=16)
                     print("El número ",a," en binari= ",b, " en decimal= ",c," en hexadecimal= ", d)
                 case "3": # Decimal a
-                    b=def dectobin(int(a))
-                    c=def dectooctal(int(a))
-                    d=def dectohex(int(a))
+                    b=dectobin(int(a))
+                    c=dectooctal(int(a))
+                    d=dectohex(int(a))
                     print("El número ",a," en binari= ",b, " en octal= ",c," en hexadecimal= ", d)
                 case "4": # Hexadecimal a
                     b=int(a,base=2)
@@ -161,3 +168,45 @@ while(opcio!=0):
                     print("Opció no vàlida!")
         case "0":
             print("Adéu")
+print("""
+Menú:
+1. Sumar
+2. Restar
+3. Multiplicar
+4. Dividir
+5. Cociente
+6. Potencia
+7. Resto
+0. Salir
+"""
+)
+opcio=input("Seleccione una opción: ")
+a = input("Indique el primer operador: ")
+b = input("Indique el segundo operador: ")
+match opcio:
+    case "1":
+        c=int(a)+int(b)
+        print("La suma de ",a," mas ",b," es ",c)
+    case "2":
+        c=int(a)-int(b)
+        print("La resta de ",a," menos ",b," es ",c)
+    case "3":
+        c=int(a)*int(b)
+        print("La multiplicación de ",a," por ",b," es ",c)
+    case "4":
+        c=int(a)/int(b)
+        print("La división entre ",a," y ",b," es ",c)
+    case "5":
+        c=int(a)//int(b)
+        print("El cociente de ",a," entre ",b," es ",c)
+    case "6":
+        c=int(a)**int(b)
+        print("",a," elevado a ",b," es ",c)
+    case "7":
+        c= int(a)%int(b)
+        print("El resto de ",a," entre ",b," es ",c)
+    case "0":
+        print("Adios")   
+    case other:
+        print("Opción no valida")
+
