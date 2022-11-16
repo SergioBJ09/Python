@@ -392,7 +392,7 @@ while(opcio!=0):
                     print("El número ",a," en binari= ",b, " en decimal= ",c," en hexadecimal= ", d)
                 case "3": # Decimal a
                     b=dectobin(int(a))
-                    c=dectooct(int(a))
+                    c=dectooctal(int(a))
                     d=dectohex(int(a))
                     print("El número ",a," en binari= ",b, " en octal= ",c," en hexadecimal= ", d)
                 case "4": # Hexadecimal a
