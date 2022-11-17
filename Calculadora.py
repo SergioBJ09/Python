@@ -71,7 +71,12 @@ def dectohex(decimal):
         hexadecimal = str(residuo) + hexadecimal
         hexadecimal = int(decimal / 16)
     return hexadecimal
-
+def bintodec(binario):
+    decimal= " "
+    while binario > 0:
+        residuo = binario % 10
+        decimal = str(residuo) + decimal
+        decimal = int(binario / 10)
 #Final Funciones
 opcio=1
 while(opcio!=0):
@@ -143,25 +148,25 @@ while(opcio!=0):
                 
             match opcio:
                 case "1":
-                    b=dectoocatal(a)
-                    c=decto(a,base=10)
-                    d=int(a,base=16)
-                    print("El número ",a," en octal= ",b, " en decimal= ",c," en hexadecimal= ", d)
-                case "2": # Octal a
-                    b=int(a,base=2)
-                    c=int(a,base=10)
-                    d=int(a,base=16)
-                    print("El número ",a," en binari= ",b, " en decimal= ",c," en hexadecimal= ", d)
-                case "3": # Decimal a
                     b=dectobin(int(a))
                     c=dectooctal(int(a))
                     d=dectohex(int(a))
                     print("El número ",a," en binari= ",b, " en octal= ",c," en hexadecimal= ", d)
+                case "2": # Octal a
+                    b=bintodec(a)
+                    c=bintooctal(a)
+                    d=bintohex(a)
+                    print("El número ",a," en decimal= ",b, " en octal= ",c," en hexadecimal= ", d)
+                case "3": # Decimal a
+                    b=a
+                    c=a
+                    d=int(a,base=16)
+                    print("El número ",a," en decimal= ",b, " en binario= ",c," en hexadecimal= ", d)
                 case "4": # Hexadecimal a
                     b=int(a,base=2)
                     c=int(a,base=8)
                     d=int(a,base=10)
-                    print("El número ",a," en binari= ",b, " en octal= ",c," en decimal= ", d)
+                    print("El número ",a," en decimal= ",b, " en binario= ",c," en octal= ", d)
                 case "0":
                     print("Adéu")
                 case other:
