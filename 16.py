@@ -1,9 +1,9 @@
 def invertir(a):
-    invertido=a
-    for i in a:
-        str[-1]+=i
-    return invertido
+    b=list(a)
+    c=b[::-1]
+    r= " ".join(c)
+    return r
 
-a=["Soy del Ramis"]
-print("S","o","y"", ","d","e","l", " ","R","a","m","i","s"," " "a","l"," ""r","e","v","é","s"," ""e","s"":" ,invertir(a))
-    
+b=input("Introduzca una palabra: ")
+c=invertir(b)
+print("La palabra" ,b, " si la giras es" ,c)
