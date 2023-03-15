@@ -10,12 +10,12 @@ def nums_que_comencen_per(l,c):
     x=0
     p=[]
     for e in l:
-        if e[0]=='a':
+        if e[0]==c:
             x+=1
             p.append(e)
-    print("El numero de paraules que comencen per A són {} i són {}".format(x,p))
+    print("El numero de paraules que comencen per {} són {} i són {}".format(c,x,p))
 
 #PP
 a=llegir()
-c='a'
+c=input("Introduce la letra para filtrar: ")
 nums_que_comencen_per(a,c)
