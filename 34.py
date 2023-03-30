@@ -38,7 +38,8 @@ def codigo():
             print("{} no esta bien colocado".format(d))
         else:
             print("{} no esta en el codigo".format(d))
-        
+        if a==a1 and b==b1 and c==c1 and d==d1:
+            print("Correcto el codigo era {}{}{}{}".format(a,b,c,d))
 
 #PP
 y=codigo()
