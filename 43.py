@@ -2,6 +2,7 @@ def leer_lista():
     lista=[]
     a=0
     while a!='.':
+        print("Introduce un '.' para parar de leer numeros")
         a=input("Introduce un numero: ")
         if a!='.':
             lista.append(a)
