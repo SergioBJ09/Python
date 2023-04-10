@@ -7,14 +7,13 @@ def leer_lista():
         if x!='.':
             l.append(x)
     return l
-def duplicados(a):
-    aux=set(a)
-    aux.update(a)
-    if len(a)==len(aux):
-        print("No hay duplicados")
-    else:
-        print("{}, se han eliminado {} numeros".format(aux,len(a)-len(aux)))
+def elementos_pares(a):
+    for i,e in enumerate(a):
+        if i%2==0:
+            print(e)
+
+
 
 #PP
 a=leer_lista()
-duplicados(a)
+elementos_pares(a)
