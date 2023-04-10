@@ -1,10 +1,7 @@
 def leer():
     return input("Introduce un numero: ")
 def recuento(a):
-    x=0
-    for e in a:
-        x+=1
-    print("{} tiene {} digitos".format(a,x))
+    print("El numero {} tiene {} digitos".format(a,len(a)))
 
 #PP
 a=leer()

@@ -1,20 +1,21 @@
+import random
+
 def leer_lista():
     l=[]
-    aux=[]
-    for i in range(3):
-        x=input("Introduce un numero: ")
+    for i in range(20):
+        x=random.randint(1,100)
         l.append(x)
-        aux.append(x)
-    return l,aux
-def duplicados(a,aux):
-    for e,i in enumerate:
-        if e in a-a[i]:
-            print("{} esta duplicado".format(e))
-        else:
-            print("No hay duplicados")
-
-
+    l.sort()
+    print(l)
+    return l
+def duplicados(a):
+    aux=set(a)
+    aux.update(a)
+    if len(a)==len(aux):
+        print("No hay duplicados")
+    else:
+        print("Hay un duplicado")
 
 #PP
-a,aux=leer_lista()
-duplicados(a,aux)
+a=leer_lista()
+duplicados(a)

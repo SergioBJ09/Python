@@ -1,6 +1,7 @@
 def leer_lista():
     l=[]
-    for i in range(3):
+    while l!='.':
+        print("Introduce un '.' para parar de leer valores")
         x=input("Introduce un numero: ")
         l.append(x)
     return l
@@ -10,7 +11,7 @@ def duplicados(a):
     if len(a)==len(aux):
         print("No hay duplicados")
     else:
-        print("Hay un duplicado")
+        print("{}, se han eliminado {} numeros".format(aux,len(a)-len(aux)))
 
 #PP
 a=leer_lista()
