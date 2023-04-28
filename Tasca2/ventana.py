@@ -19,12 +19,6 @@ def cronometro():
         time.sleep(1)
 
 
-
-
-
-
-
-
 #PP
 raiz = Tk() #Creamos una clase "Raiz"
 raiz.title("Cronometro") #Cambiar nombre de la Ventana

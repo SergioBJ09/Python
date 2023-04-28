@@ -1,4 +1,5 @@
 import random
+import time
 def menu_principal():
     print("""
     Menú:
@@ -100,16 +101,23 @@ def blackjack():
                     1 - Volver a jugar
                     0 - Salir
                     """)
-                    a=input("Introduce una opción: ")
+                    a=input("Introduce una opción: ")          
+def cronometro(a):
+    segundos=0
+    minutos=0
+    while a!='.':
+        tiempo=[]
+        segundos+=1
+        if segundos==60:
+            minutos+=1
+            segundos=0
+        tiempo.append(minutos)
+        tiempo.append(segundos)
+        print(tiempo)
+        time.sleep(1)
 
-                    
 
 
-                
-                    
-                  
-def cronometro():
-    a=0
 #PP
 opcio=1
 while opcio!=0:
@@ -122,7 +130,7 @@ while opcio!=0:
         case "3": #Si se introduce un 3 se ejecutara la función
             juego=blackjack()
         case "4": #Si se introduce un 4 se ejecutara la función
-            crono=cronometro()
+            crono=cronometro(a)
         case "0":
             opcio=0
             print("Adios")
