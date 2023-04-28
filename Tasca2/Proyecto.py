@@ -29,55 +29,81 @@ def contraseña():
     input("Pulsa ENTER para continuar")
 def blackjack():
     a=1
-    while a !=0:
+    while a !="0":
         print("""
         Menú:
         1. Jugar
         0. Salir
         """)
         a=input("Seleccione una opcio: ")
-        match a:
-            case "1":
-                cartas=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
-                valores=[1,2,3,4,5,6,7,8,9,10,11,12,13]
-                jugador=[]
-                crupier=[]
-                a=random.choice(cartas)
-                a1=valores[a]
-                b=random.choice(cartas)
-                b1=valores[b]
-                print("Tus cartas son: {} y {}, tienes un total de {}".format(a,b,a1+b1))
-                
-                print("""
-                1 - Pedir Cartar
-                2 - Plantarse
-                """)
-                opcio=input("Selecciona una opción: ")
-                if opcio=="1":
-                    c=random.choice(cartas)
-                    c1=valores[c]
-                    print("Tus cartas son : {}, {} y {}, tienes un total de {}".format(a,b,c,suma1+c1))
-                    suma2=a1+b1+c1
-                    jugador.append(suma2)
-                if opcio=="2":
-                    suma=a1+b1
-                    jugador.append(suma)
+        while a!="0":
+            match a:
+                case "1":
+                    cartas=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+                    v=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+                    jugador=0
+                    crupier=0
+                    a=random.randint(0,12)
+                    a1=v[a]
+                    b=random.randint(0,12)
+                    b1=v[b]
+                    print("Tus cartas son: {} y {}, tienes un total de {}".format(cartas[a],cartas[b],a1+b1))
+                    print("""
+                    1 - Pedir Carta
+                    2 - Plantarse
+                    """)
+                    opcio=input("Selecciona una opción: ")
+                    if opcio=="1":
+                        c=random.randint(0,12)
+                        c1=v[c]
+                        suma2=a1+b1+c1
+                        jugador+=suma2
+                        print("Tus cartas son : {}, {} y {}, tienes un total de {}".format(cartas[a],cartas[b],cartas[c],suma2))
+                        input("Pulsa ENTER para continuar")
+                    if opcio=="2":
+                        suma=a1+b1
+                        jugador+=suma
 
-                crupier1=random.choice(cartas)
-                x=valores[crupier1]
-                crupier2=random.choice(cartas)
-                x1=valores[crupier2]
-                if x+x1<10:
-                    crupier3=random.choice(cartas)
-                    x3=valores[crupier3]
-                    suma3=crupier1+crupier2+crupier3
-                    crupier.append(suma3)
-                if x+x+1>10:
-                    suma1=crupier1+crupier2
-                    crupier.append(suma1)
-                print("""
-                Tu tienes {} y el Crupier tiene {}
-                """.format(jugador,crupier))
+                    crupier1=random.randint(0,12)
+                    x1=v[crupier1]
+                    crupier2=random.randint(0,12)
+                    x2=v[crupier2]
+                    if x1+x2<10:
+                        crupier3=random.randint(0,12)
+                        x3=v[crupier3]
+                        suma3=crupier1+crupier2+crupier3
+                        crupier+=suma3
+                    else:
+                        suma1=crupier1+crupier2
+                        crupier+=suma1
+                    if crupier<10:
+                        crupier4=random.randint(0,12)
+                        x4=v[crupier4]
+                        crupier+=crupier4
+
+                    print("""
+                    Tu tienes {} y el Crupier tiene {}
+                    """.format(jugador,crupier))
+                    if jugador<=21 and crupier<=21:
+                        if jugador>crupier:
+                            print("Has ganado")
+                        elif crupier>jugador:
+                            print("Has perdido")
+                    if jugador>21 and crupier<=21:
+                        print("Has perdido")
+                    if crupier>21 and jugador<=21:
+                        print("Has ganado")
+                    if crupier==jugador or (crupier>21 and jugador>21):
+                        print("Es un empate")
+                    print("""
+                    Volver a jugar?
+                    1 - Volver a jugar
+                    0 - Salir
+                    """)
+                    a=input("Introduce una opción: ")
+
+                    
+
 
                 
                     
