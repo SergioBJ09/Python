@@ -3,6 +3,10 @@ import threading
 def cronometro(crono):
     segundos=0
     minutos=0
+    tiempo=[]
+    tiempo.append(minutos)
+    tiempo.append(segundos)
+    print(tiempo)
     while crono!='.':
         tiempo=[]
         segundos+=1
@@ -11,8 +15,8 @@ def cronometro(crono):
             segundos=0
         tiempo.append(minutos)
         tiempo.append(segundos)
-        print(tiempo)
         time.sleep(1)
+        print(tiempo)
 
 
 

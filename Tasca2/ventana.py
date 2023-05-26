@@ -16,7 +16,7 @@ def cronometro(segundos,minutos):
     tiempo.append(segundos)
     print(tiempo)
 def threads():
-    hilo1=threading.Timer(1, function=cronometro(segundos,minutos))
+    hilo1=threading.Event.__init__(cronometro(segundos,minutos))
     hilo1.start()
 #PP
 raiz = Tk() #Creamos una clase "Raiz"
@@ -29,4 +29,4 @@ boton=ttk.Button(raiz,text="Start")
 boton.config(command=threads)
 boton.place(x=150,y=200)
 raiz.mainloop() #Mantiene invisible la ventana "Raiz"
-cronometro()
+cronometro(segundos,minutos)
