@@ -20,15 +20,18 @@ def obtener_tiempo_transcurrido_formateado():
 def refrescar_tiempo_transcurrido():
     variable_hora_actual.set(obtener_tiempo_transcurrido_formateado())
     raiz.after(INTERVALO_REFRESCO, refrescar_tiempo_transcurrido)
+def hilo():
+    hilo1.start()
 segundos=0
 hora_inicio = datetime.now()
 hilo1=threading.Timer(1, function=temporizador(segundos))
-hilo1.start()
 raiz = tk.Tk()
 variable_hora_actual = tk.StringVar(raiz, value=obtener_tiempo_transcurrido_formateado())
 raiz.etiqueta = tk.Label(
     raiz, textvariable=variable_hora_actual, font=f"Consolas 60")
 raiz.etiqueta.pack(side="top")
+boton=tk.Button(raiz,text="Start",command=hilo)
+boton.place(x=260,y=320)
 app = tk.Frame()
 raiz.title("Cronómetro")
 refrescar_tiempo_transcurrido()
