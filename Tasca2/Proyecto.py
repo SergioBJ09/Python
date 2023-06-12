@@ -1,12 +1,14 @@
 import random
 import time
+
 def menu_principal():
     print("""
     Menú:
     1. Color Aleatorio
     2. Cuaderno de Contraseñas
     3. Blackjack
-    4. Cronometro Externo
+    4. Calculadora
+    5. Movimientos Pokemon de Kanto
     0. Salir
     """
     )
@@ -115,8 +117,18 @@ def cronometro(a):
         tiempo.append(segundos)
         print(tiempo)
         time.sleep(1)
-
-
+def calculadora():
+    import ventana.py
+def movpokemon():
+    import requests
+    for i in range(10):
+        a = "https://pokeapi.co/api/v2/type/"+str((i+1))
+        res=requests.get(a)
+        if res.status_code == 200:
+            datos = res.json()
+            print("El nombre del ataque {}".format(datos["results"]["name"]))
+        else:
+            print("No hay datos")
 
 #PP
 opcio=1
@@ -130,7 +142,9 @@ while opcio!=0:
         case "3": #Si se introduce un 3 se ejecutara la función
             juego=blackjack()
         case "4": #Si se introduce un 4 se ejecutara la función
-            crono=cronometro(a)
+            calc=calculadora()
+        case "5":
+            api=movpokemon()
         case "0":
             opcio=0
             print("Adios")
