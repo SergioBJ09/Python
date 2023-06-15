@@ -8,7 +8,7 @@ ventana.resizable(0,0)
 def calcular(num1):
     a=1
 def valor1(calc):
-    calc+=1
+    calc
     imprimir(calc,num)
     return calc
 def valor2(calc):

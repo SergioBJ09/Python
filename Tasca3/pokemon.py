@@ -5,7 +5,7 @@ for i in range(10):
 	if res.status_code == 200:
 		dades = res.json()
 		print("El nom del pokémon és: {}".format(dades["chain"]["species"]["name"]))
-		for e in dades["chain"]["evolves_to"]["evolution_details"]:
-			print("Nom de la seva evolució: ", e["min_level"])
-else:
-	print("No hi ha dades.")
+		for e in dades["chain"]["evolves_to"]:
+			print("Nom de la seva evolució: ", e["species"]["name"])
+	else:
+		print("No hi ha dades.")

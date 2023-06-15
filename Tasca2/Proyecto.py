@@ -1,5 +1,6 @@
 import random
 import time
+import requests
 
 def menu_principal():
     print("""
@@ -8,7 +9,7 @@ def menu_principal():
     2. Cuaderno de Contraseñas
     3. Blackjack
     4. Calculadora
-    5. Movimientos Pokemon de Kanto
+    5. Objetos de Pokemon
     0. Salir
     """
     )
@@ -118,15 +119,19 @@ def cronometro(a):
         print(tiempo)
         time.sleep(1)
 def calculadora():
-    import ventana.py
-def movpokemon():
-    import requests
+    try:
+        import ventana.py
+    except:
+        ModuleNotFoundError
+def objpokemon():
     for i in range(10):
-        a = "https://pokeapi.co/api/v2/type/"+str((i+1))
+        a = "https://pokeapi.co/api/v2/item/"+str((i+1))
         res=requests.get(a)
         if res.status_code == 200:
             datos = res.json()
-            print("El nombre del ataque {}".format(datos["results"]["name"]))
+            #rint("El nombre del ataque {}".format(datos["main"]["name"]["attributes"]["name"]["descriptions"]["description"]))
+            print("El nombre del objeto es {}".format(datos["name"]))
+            
         else:
             print("No hay datos")
 
@@ -144,7 +149,7 @@ while opcio!=0:
         case "4": #Si se introduce un 4 se ejecutara la función
             calc=calculadora()
         case "5":
-            api=movpokemon()
+            objpokemon()
         case "0":
             opcio=0
             print("Adios")
